@@ -11,7 +11,6 @@ public class RequestHandler {
     static OkHttpClient client = new OkHttpClient();
     static ObjectMapper objectMapper = new ObjectMapper();
 
-
     public static String detectCity(String cityName) throws IOException {
 
         HttpUrl detectCityUrl = new HttpUrl.Builder()
@@ -32,7 +31,6 @@ public class RequestHandler {
 
         Response response = client.newCall(request).execute();
 
-
         String json = response.body().string();
 
         if(!response.isSuccessful()){
@@ -51,7 +49,6 @@ public class RequestHandler {
 
         return objectMapper.readTree(json).get(0).at("/Key").asText();
     }
-
 
     public static String detectWheather (String cityCode) throws IOException {
 
