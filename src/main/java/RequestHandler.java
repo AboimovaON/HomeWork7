@@ -3,11 +3,8 @@ import com.squareup.okhttp.HttpUrl;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import org.sqlite.JDBC;
-
 import java.io.IOException;
 import java.net.SocketTimeoutException;
-import java.sql.*;
 
 
 
@@ -85,6 +82,5 @@ public class RequestHandler {
 
         return response.body().string();
     }
-    public static boolean getAllWeather() {
-    }
+
 }
