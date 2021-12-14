@@ -3,13 +3,19 @@ import com.squareup.okhttp.HttpUrl;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
+import org.sqlite.JDBC;
+
 import java.io.IOException;
+import java.net.SocketTimeoutException;
+import java.sql.*;
+
 
 
 public class RequestHandler {
 
     static OkHttpClient client = new OkHttpClient();
     static ObjectMapper objectMapper = new ObjectMapper();
+    public final String PATH_TO_DB = "C:\\Users\\olgaa\\IdeaProjects\\HomeWork7\\src\\main\\resources\\Accuweather.db";
 
     public static String detectCity(String cityName) throws IOException {
 
@@ -50,7 +56,7 @@ public class RequestHandler {
         return objectMapper.readTree(json).get(0).at("/Key").asText();
     }
 
-    public static String detectWheather (String cityCode) throws IOException {
+    public static String detectWheather(String cityCode) throws SocketTimeoutException, IOException {
 
         HttpUrl detectWheatherUrl = new HttpUrl.Builder()
                 .scheme("http")
@@ -79,5 +85,6 @@ public class RequestHandler {
 
         return response.body().string();
     }
-
+    public static boolean getAllWeather() {
+    }
 }
