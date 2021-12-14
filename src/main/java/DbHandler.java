@@ -50,6 +50,7 @@ public class DbHandler { public final String PATH_TO_DB = "jdbc:sqlite:C:\\Users
                             resultSet.getInt("weatherText"),
                             (double) resultSet.getInt("temperature")
                     ));
+
                 }
             }
         } catch (SQLException exception) {
