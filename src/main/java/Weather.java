@@ -19,8 +19,6 @@ public class Weather {
     public Weather(String city) {
     }
 
-
-
     @Override
     public String toString() {
         return new StringBuilder().append(city).append(" ").append(localDate).toString();

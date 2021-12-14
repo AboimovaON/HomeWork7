@@ -12,7 +12,6 @@ public class Main {
         String cityCode = RequestHandler.detectWheather(city);
 
         System.out.println(RequestHandler.detectWheather(cityCode));
-
         System.out.println(RequestHandler.getAllWeather());
         System.out.println(RequestHandler.getAllWeather());
 

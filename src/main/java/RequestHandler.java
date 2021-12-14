@@ -79,7 +79,6 @@ public class RequestHandler {
                     " с кодом " + response.code() +
                     " с телом " + response.body().string());
         }
-
         return response.body().string();
     }
 
